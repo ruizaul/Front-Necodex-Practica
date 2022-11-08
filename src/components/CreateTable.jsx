@@ -7,6 +7,7 @@ import { TableStatusPills } from '../components/TableStatusPills';
 import { TableActionButtons } from '../components/TableActionButtons';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import HashLoader from 'react-spinners/HashLoader';
+import { useNavigate } from 'react-router-dom';
 
 export const CreateTable = () => {
   const [limit, setLimit] = useState(5);
@@ -15,6 +16,9 @@ export const CreateTable = () => {
   const [actualPage, setPage] = useState(1);
   const [total, setTotal] = useState();
   const [data, setData] = useState([]);
+  const [showElement, setShowElement] = useState(true);
+
+  const navigate = useNavigate();
 
   const getData = async () => {
     await axios
@@ -27,6 +31,12 @@ export const CreateTable = () => {
         setData(res.data.practicantes, []);
       });
   };
+
+  useEffect(() => {
+    setTimeout(function () {
+      setShowElement(false);
+    }, 3000);
+  }, []);
 
   useEffect(() => {
     getData();
@@ -95,26 +105,59 @@ export const CreateTable = () => {
   if (data.length === 0)
     return (
       <>
-        <h1 className='flex justify-center items-center mt-40'>
-          <HashLoader color='#36d7b7' />
-        </h1>
+        <div className='flex flex-col justify-center items-center mt-20 gap-10 '>
+          <HashLoader color='#36d7b7' size={100} />
+
+          {!showElement ? (
+            <>
+              <h1 className='transition ease-in-out duration-300 mt-20 font-mono font-thin text-xl text-center'>
+                👻 Parece que no existen practicantes, crea uno nuevo:
+              </h1>
+              <div
+                title='Agregar Practicante'
+                onClick={() => {
+                  navigate('/agregar');
+                }}
+              >
+                <button className='w-20 h-20 bg-[#1b7772] hover:bg-[#1E847F]/80 text-white font-mono py-2 px-4 border-b-4 cursor-pointer border-teal-800 hover:border-teal-900 rounded-full'>
+                  +
+                </button>
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
+        </div>
       </>
     );
 
   return (
     <>
-      <div className='grid content-center gap-4 auto-rows-auto grid-cols-1 min-w-[80%] '>
+      <div className='grid content-center gap-4 auto-rows-auto grid-cols-1 max-w-full'>
         <div className='rounded-lg bg-gray-100 text-gray-900'>
           <main className='px-5 pt-5 pb-3'>
             <h1 className='pb-3 text-xl font-semibold'>📌 Catalogo de practicantes</h1>
 
             {/* SearchBar */}
-            <div className='flex gap-x-2'>
+            <div className='flex justify-between gap-x-2'>
               <GlobalFilter
                 globalFilter={state.globalFilter}
                 setGlobalFilter={setGlobalFilter}
                 total={total}
               />
+
+              {/* Boton Crear practicante */}
+              <div
+                className='cursor-pointer w-fit'
+                title='Agregar Practicante'
+                onClick={() => {
+                  navigate('/agregar');
+                }}
+              >
+                <button className=' bg-[#1b7772] hover:bg-[#1E847F]/80 text-white font-mono py-2 px-4 border-b-4 border-teal-800 hover:border-teal-900 rounded-full'>
+                  +
+                </button>
+              </div>
             </div>
 
             {/* Columns & Rows */}

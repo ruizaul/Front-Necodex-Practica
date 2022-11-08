@@ -74,10 +74,10 @@ export const Agregar = () => {
 
   return (
     <>
-      <div>
+      <div className='flex items-center justify-center flex-col gap-5'>
         {/* Back Button */}
         <button
-          className='flex items-center justify-center mt-10 mx-10 text-white  focus:outline-none font-medium rounded-lg text-sm p-2.5 text-center mr-2 dark:bg-[#1a1a1a] dark:hover:bg-[#1e847f]'
+          className='flex self-start mt-10 text-white  focus:outline-none font-medium rounded-r-lg text-sm p-2.5 text-center mr-2 dark:bg-[#1a1a1a] dark:hover:bg-[#1e847f]'
           type='button'
           title='Regresar'
           onClick={() => navigate('/')}
@@ -95,13 +95,13 @@ export const Agregar = () => {
         </button>
 
         {/* Titulo */}
-        <h1 className='flex items-center justify-center -mb-10 mt-2 mx-10 font-large leading-tight text-4xl text-gray-300'>
+        <h1 className='flex self-center text-center text-2xl font-large leading-tight md:text-4xl text-gray-300'>
           Crear practicante
         </h1>
 
         {/* Form */}
-        <div className='grid content-center gap-4 auto-rows-auto grid-cols-1 my-20'>
-          <div className='mx-auto grid-cols-2 px-8 py-8 bg-slate-100 rounded-lg'>
+        <div className='flex self-center flex-row gap-2 mb-10'>
+          <div className='w-56 md:w-full p-5 bg-slate-100 rounded-lg'>
             <form
               onSubmit={(e) => {
                 submit(e);
@@ -113,6 +113,7 @@ export const Agregar = () => {
                   {'📜 Nombre(s)'}
                 </label>
                 <input
+                  autoFocus
                   required
                   onChange={(e) => handle(e)}
                   type='text'
@@ -281,7 +282,7 @@ export const Agregar = () => {
               </div>
 
               {/* Submit Button*/}
-              <div className='mt-8 mx-28 '>
+              <div className='flex justify-center mt-8'>
                 <button className='hover:shadow-form rounded-md bg-[#1e847f] py-3 px-8 text-base font-semibold text-white outline-none'>
                   Crear
                 </button>
