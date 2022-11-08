@@ -9,21 +9,16 @@ export const Home = () => {
     <>
       {/* Contenedor de todo lo que despliega la pagina */}
 
-      <div className='container'>
+      <div className='flex flex-col h-screen'>
         {/* Header de la pagina */}
 
-        <div className='cont ttle'>
-          <span className='gre'>{'<N'}</span>
-          <span className='whi'>{'ecodex  -->'}</span>
-          <span className='righty'>
-            {' Catálogo de practicantes  '}
-            <span className='gre2'>{'/>'}</span>
-          </span>
+        <div className='p-2 text-center font-mono text-2xl text-gray-300  bg-teal-300/30 md:text-5xl'>
+          Necodex - Catalogo de practicantes
         </div>
 
         {/* Boton Crear practicante */}
         <div
-          className='grid content-center gap-4 auto-rows-auto grid-cols-1 mx-auto cursor-pointer'
+          className='flex justify-center mt-10 cursor-pointer'
           title='Agregar Practicante'
           onClick={() => {
             navigate('/agregar');
@@ -36,13 +31,15 @@ export const Home = () => {
 
         {/* Mostrar tabla */}
 
-        <div className='cont table'>
+        <div className='flex items-center justify-center p-2'>
           <CreateTable />
         </div>
 
         {/* Footer de la pagina */}
 
-        <div className='footer'>{'© 2022 Saul Fimbres - Roberto Amaya. All Rights Reserved.'}</div>
+        <div className='mt-auto p-4 items-center text-gray-500/40 text-center text-sm'>
+          {'© 2022 Saul Fimbres. All Rights Reserved.'}
+        </div>
       </div>
     </>
   );

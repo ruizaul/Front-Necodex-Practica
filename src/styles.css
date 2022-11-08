@@ -12,50 +12,5 @@ body {
   color: azure;
 }
 
-.container {
-  display: grid;
-  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr;
-  grid-auto-columns: 1fr;
-  grid-auto-rows: 1fr;
-  margin: auto;
-  gap: 20px 1px;
-  min-height: 100vh;
-  max-width: auto;
-}
 
-.ttle {
-  grid-area: 1 / 1 / 2 / 2;
-  padding: 20px 20px;
-  font-size: 24px;
-}
 
-.gre {
-  color: #1e847f;
-  font-size: larger;
-  font-style: italic;
-}
-
-.gre2 {
-  float: right;
-  color: #1e847f;
-  font-size: larger;
-  font-style: italic;
-}
-
-.righty {
-  float: right;
-}
-
-.table {
-  grid-area: 3 / 1 / 4 / 2;
-  margin: 0px 20px;
-}
-
-.footer {
-  grid-area: 4 / 1 / 5 / 2;
-  color: rgb(110, 110, 110);
-  margin-top: 50px;
-  text-align: center;
-  padding: 20px 20px;
-  font-size: 14px;
-}

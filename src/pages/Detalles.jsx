@@ -12,9 +12,7 @@ export const Detalles = () => {
 
   const value = state.uid;
 
-  const status = state.status;
-
-  const statu = status ? 'activo' : 'inactivo';
+  const status = state.status ? 'activo' : 'inactivo';
 
   const parseDate = moment(state.nacimiento).utc().format('YYYY-MM-DD');
 
@@ -281,7 +279,7 @@ export const Detalles = () => {
                   state.status === false ? 'bg-yellow-700 text-white' : 'bg-green-700 text-white'
                 )}
               >
-                {statu}
+                {status}
               </span>
             </div>
           </form>
