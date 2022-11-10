@@ -8,36 +8,9 @@ body {
   max-width: auto;
   font-family: Proxima Nova, system-ui, sans-serif;
   font-size: 18px;
-  background: linear-gradient(164deg, #202929, #111111, #1d1f22, #242323);
-  background-size: 800% 800%;
-  -webkit-animation: grad 20s ease infinite;
-  -moz-animation: grad 20s ease infinite;
-  animation: grad 20s ease infinite;
+  background-color: rgb(24, 23, 23);
   color: azure;
 }
 
-@-webkit-keyframes grad {
-  0% {
-    background-position: 0% 28%; }
-  50% {
-    background-position: 100% 73%; }
-  100% {
-    background-position: 0% 28%; } }
-
-@-moz-keyframes grad {
-  0% {
-    background-position: 0% 28%; }
-  50% {
-    background-position: 100% 73%; }
-  100% {
-    background-position: 0% 28%; } }
-
-@keyframes grad {
-  0% {
-    background-position: 0% 28%; }
-  50% {
-    background-position: 100% 73%; }
-  100% {
-    background-position: 0% 28%; } }
 
 

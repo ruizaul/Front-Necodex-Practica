@@ -136,7 +136,7 @@ export const CreateTable = () => {
       <div className='px-8 py-32'>
         <div className='grid gap-8 items-start justify-center'>
           <div className='relative group'>
-            <div className='absolute -inset-0.5 bg-gradient-to-r from-stone-600 to-gray-300/60 rounded-lg blur opacity-90 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt'></div>
+            <div className='absolute -inset-0.5 bg-gradient-to-t from-teal-600 to-teal-300/20 rounded-lg blur opacity-90 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt'></div>
             <div className='relative p-1 bg-black/20 rounded-lg leading-none flex items-center divide-x divide-gray-600'>
               <div className='grid content-center gap-4 auto-rows-auto grid-cols-1 max-w-full'>
                 <div className='rounded-lg bg-gray-100 text-gray-900'>
